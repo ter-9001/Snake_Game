@@ -7,96 +7,33 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="main.css" />
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="main.js">  </script>
     
 
 </head>
 
-
-<script>
-
-var bicho = $("#bicho");
-var medida;
-
-document.addEventListener("DOMContentLoaded", function(event) {
-
-
-    //$("#bicho").draggable();
-
-    $(document).keydown(function(e) {
-    
-    
-
-    switch (e.which) {
-    case 37:
-        //left
-       medida = $("#bicho").offset().left - 40;
-       $("#bicho").animate({
-            left: medida + "px"
-        });
-        Aparecer_personagem();
-        break;
-    case 38:
-        //top
-        medida = $("#bicho").offset().top - 40;
-       $("#bicho").animate({
-            top: medida + "px"
-        });
-        break;
-    case 39:
-        //right
-        medida = $("#bicho").offset().left + 40;
-       $("#bicho").animate({
-            left: medida + "px"
-        });
-        break;
-    case 40:
-        //bottom
-        medida = $("#bicho").offset().top + 40;
-       $("#bicho").animate({
-            top: medida + "px"
-        });
-        break;    
-    }
-
-
-});
+<body>
 
 
 
-  
+<div class="container-fluid text-center" id="instruncoes" style="width: 400px; margin-top: 20px;">
+
+    <p class="text-center" style="font-size: xx-large;"> Instruções</p>
+
+    <h6>1. Use as teclas de direção para navegar a Cobrinha</h6>
+
+    <h6>2. Tente pegar o máximo possível de Passageiras </h6>
+
+    <h6>3. O jogo acaba quando a Cobrinha sai da aréa colorida </h6>
+
+    <h6>4. Abaixo do jogo é exibido quantos personagens, você pegou</h6>
+
+    <a id="ir_para_jogo" href="#tabuleiro"> Ir para o jogo </a>
+
+</div>
 
 
-
-
-})
-
-
-function Aparecer_personagem (){
-
-  var max = 9;  
-  var number = Math.floor( Math.random()* (max))+1;
-  
-  for(var i= 0; i<=max; i++)
-  {
-    
-    $("#"+"a"+i).css("background-image","url('none')");
-    
-  }  
-
-
-  $("#"+"a"+number).css("background-image","url('icone-personagem.jpg')");
-  console.log("#"+"a"+number);
-
-
-}
-
-</script>
-
-
-
-
-
-<div class="container text-center" style="width: 400px; margin-top: 40px;">
+<div class="container text-center" id="tabuleiro" style="width: 400px; margin-top: 200px;">
 
     
 
@@ -161,13 +98,27 @@ function Aparecer_personagem (){
 
         <div class="col plano_de_fundo" id="a9">
             
-           
+         
 
         </div> 
+    
+        <div id="bicho" class="ui-widget-content text-center" style="display:flex; position:fixed;" > <p> ************     </p> </div>
     </div>
     
-    <div id="bicho" class="ui-widget-content text-center" style="display:flex; position:fixed;" > <p> ************     </p> </div>
+    
+    
     
 </div>
+<div class= "container text-center" style="margin-top:30px" >
+    <p style="font-size: x-large;">  Você pegou: </p> 
+    
+      <div style="display: inline; justify-content: center; ">
+          <p id="taken" style="font-size: xx-large;">  0 </p> 
+          <p style="font-size: large; margin-left: 5px;"> Passageira (s) </p>
+      </div>
 
+  </div>
+
+
+</body>  
 </html>
