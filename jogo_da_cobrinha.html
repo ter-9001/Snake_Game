@@ -73,8 +73,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function Aparecer_personagem (){
 
-  var number = Math.floor( Math.random()* (4-1))+1;
+  var max = 9;  
+  var number = Math.floor( Math.random()* (max))+1;
   
+  for(var i= 0; i<=max; i++)
+  {
+    
+    $("#"+"a"+i).css("background-image","url('none')");
+    
+  }  
+
+
   $("#"+"a"+number).css("background-image","url('icone-personagem.jpg')");
   console.log("#"+"a"+number);
 
@@ -115,19 +124,19 @@ function Aparecer_personagem (){
 
 
     <div class="row"  >
-        <div class="col plano_de_fundo" >
+        <div class="col plano_de_fundo" id="a4">
             
           
 
         </div>      
 
-        <div class="col plano_de_fundo" >
+        <div class="col plano_de_fundo" id="a5">
             
            
 
         </div> 
 
-        <div class="col plano_de_fundo" >
+        <div class="col plano_de_fundo" id="a6">
             
            
 
@@ -138,19 +147,19 @@ function Aparecer_personagem (){
 
 
     <div class="row"  >
-        <div class="col plano_de_fundo" >
+        <div class="col plano_de_fundo" id="a7">
             
           
 
         </div>      
 
-        <div class="col plano_de_fundo" >
+        <div class="col plano_de_fundo" id="a8">
             
            
 
         </div> 
 
-        <div class="col plano_de_fundo" >
+        <div class="col plano_de_fundo" id="a9">
             
            
 
