@@ -1,0 +1,164 @@
+<!DOCTYPE html lang="pt-br">
+<html>
+
+<head>
+    <title>Meu jogo da Cobrinha</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+
+</head>
+
+
+<script>
+
+var bicho = $("#bicho");
+var medida;
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+
+    //$("#bicho").draggable();
+
+    $(document).keydown(function(e) {
+    
+    
+
+    switch (e.which) {
+    case 37:
+        //left
+       medida = $("#bicho").offset().left - 40;
+       $("#bicho").animate({
+            left: medida + "px"
+        });
+        Aparecer_personagem();
+        break;
+    case 38:
+        //top
+        medida = $("#bicho").offset().top - 40;
+       $("#bicho").animate({
+            top: medida + "px"
+        });
+        break;
+    case 39:
+        //right
+        medida = $("#bicho").offset().left + 40;
+       $("#bicho").animate({
+            left: medida + "px"
+        });
+        break;
+    case 40:
+        //bottom
+        medida = $("#bicho").offset().top + 40;
+       $("#bicho").animate({
+            top: medida + "px"
+        });
+        break;    
+    }
+
+
+});
+
+
+
+  
+
+
+
+
+})
+
+
+function Aparecer_personagem (){
+
+  var number = Math.floor( Math.random()* (4-1))+1;
+  
+  $("#"+"a"+number).css("background-image","url('icone-personagem.jpg')");
+  console.log("#"+"a"+number);
+
+
+}
+
+</script>
+
+
+
+
+
+<div class="container text-center" style="width: 400px; margin-top: 40px;">
+
+    
+
+    <div class="row"  >
+        <div class="col plano_de_fundo" id="a1">
+            
+          
+
+        </div>      
+
+        <div class="col plano_de_fundo"  id="a2">
+            
+           
+
+        </div> 
+
+        <div class="col plano_de_fundo" id="a3">
+            
+           
+
+        </div> 
+    </div>
+    
+
+
+
+    <div class="row"  >
+        <div class="col plano_de_fundo" >
+            
+          
+
+        </div>      
+
+        <div class="col plano_de_fundo" >
+            
+           
+
+        </div> 
+
+        <div class="col plano_de_fundo" >
+            
+           
+
+        </div> 
+    </div>
+    
+
+
+
+    <div class="row"  >
+        <div class="col plano_de_fundo" >
+            
+          
+
+        </div>      
+
+        <div class="col plano_de_fundo" >
+            
+           
+
+        </div> 
+
+        <div class="col plano_de_fundo" >
+            
+           
+
+        </div> 
+    </div>
+    
+    <div id="bicho" class="ui-widget-content text-center" style="display:flex; position:fixed;" > <p> ************     </p> </div>
+    
+</div>
+
+</html>
